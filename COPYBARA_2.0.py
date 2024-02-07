@@ -67,7 +67,7 @@ def copybara(source, destination, delay_seconds=0):  # 12 hours = 43200 seconds
                     print(f"COPYING DIRECTORY at {(datetime.now()).strftime('%I:%M:%S %p on %A, %B %d, %Y')}:\n==================\n{source_item}\n>>>to>>>\n{destination_item}\n==================")
                     shutil.copytree(source_item, destination_item)
                     item_count += 1
-                    print(f"Completed at {(datetime.now()).strftime('%I:%M:%S %p on %A, %B %d, %Y')}.\n\n")
+                    print(f"Completed at {(datetime.now()).strftime('%I:%M:%S %p on %A, %B %d, %Y')}.\n\n", flush=True)
 
                 except Exception as e:
                     print(f"Failed to copy {source_item} to {destination_item}. Error: {e}\n\n")
@@ -81,7 +81,7 @@ def copybara(source, destination, delay_seconds=0):  # 12 hours = 43200 seconds
                     print(f"COPYING FILE at {(datetime.now()).strftime('%I:%M:%S %p on %A, %B %d, %Y')}:\n==================\n{source_item}\n>>>to>>>\n{destination_item}\n==================")
                     shutil.copy2(source_item, destination_item)
                     item_count += 1
-                    print(f"Completed at {(datetime.now()).strftime('%I:%M:%S %p on %A, %B %d, %Y')}.\n\n")
+                    print(f"Completed at {(datetime.now()).strftime('%I:%M:%S %p on %A, %B %d, %Y')}.\n\n", flush=True)
 
                 except Exception as e:
                     print(f"Failed to copy {source_item} to {destination_item}. Error: {e}\n\n")
